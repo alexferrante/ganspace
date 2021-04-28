@@ -189,7 +189,7 @@ class StyleGAN2(BaseModel):
     
     def forward(self, x):
         x = x if isinstance(x, list) else [x]
-        out, _ = self.model(x, noise=self.noise,
+        out, _ = self.model.forward(x, noise=self.noise,
             truncation=self.truncation, truncation_latent=self.latent_avg, input_is_w=self.w_primary)
         return 0.5*(out+1)
 
