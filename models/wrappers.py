@@ -147,8 +147,8 @@ class StyleGAN2(BaseModel):
             'places': 'https://drive.google.com/uc?export=download&id=1X8-wIH3aYKjgDZt4KMOtQzN1m4AlCVhm',
             'bedrooms': 'https://drive.google.com/uc?export=download&id=1nZTW7mjazs-qPhkmbsOLLA_6qws-eNQu',
             'kitchen': 'https://drive.google.com/uc?export=download&id=15dCpnZ1YLAnETAPB0FGmXwdBclbwMEkZ',
-            'dogs-bal': 'https://drive.google.com/uc?export=download&id=1ViOoNGwcvaTeKrEQ8WEC9yB7aZPcrW7G',
-            'dogs-imbal': 'https://drive.google.com/uc?export=download&id=1GDk6a37r5tmCDbVYIWyaL8Td4wIfkEdf'
+            'dogs-bal': 'https://drive.google.com/uc?export=download&id=1w8jOen7uyYRu9P8rAl2x99NCW3my82Go',
+            'dogs-imbal': 'https://drive.google.com/uc?export=download&id=1ABwZeVGdeJNgH4eZ6PKUdmKwgdeX_2kX'
         }
 
         url = checkpoints[self.outclass]
