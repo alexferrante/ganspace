@@ -359,7 +359,7 @@ def compute(config, dump_name, instrumented_model):
 
 # Return cached results or commpute if needed
 # Pass existing InstrumentedModel instance to reuse it
-def get_or_compute(config, model=None, submit_config=None, force_recompute=False):
+def get_or_compute(config, model=None, submit_config=None, force_recompute=True):
     if submit_config is None:
         wrkdir = str(Path(__file__).parent.resolve())
         submit_config = SimpleNamespace(run_dir_root = wrkdir, run_dir = wrkdir)
@@ -367,7 +367,7 @@ def get_or_compute(config, model=None, submit_config=None, force_recompute=False
     # Called directly by run.py
     return _compute(submit_config, config, model, force_recompute)
 
-def _compute(submit_config, config, model=None, force_recompute=False):
+def _compute(submit_config, config, model=None, force_recompute=True):
     basedir = Path(submit_config.run_dir)
     outdir = basedir / 'out'
     
