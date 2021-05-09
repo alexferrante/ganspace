@@ -115,6 +115,7 @@ class StyleGAN2(BaseModel):
             'kitchen': 256,
             'places': 256,
             'dogs-bal': 64,
+            'dogs-imbal': 64,
         }
 
         assert self.outclass in configs, \
