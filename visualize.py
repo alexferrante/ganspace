@@ -291,7 +291,7 @@ if __name__ == '__main__':
             plt.figure(figsize = (14,12))
             plt.suptitle(f"{args.estimator.upper()}: {model.name} - {layer_name}, {get_edit_name(edit_mode)} edit", size=16)
             make_grid(z, tensors.Z_global_mean, tensors.Z_comp, tensors.Z_stdev,
-                tensors.X_global_mean, tensors.X_comp, tensors.X_stdev, scale=args.sigma, edit_type=edit_mode, n_rows=14)
+                tensors.X_global_mean, tensors.X_comp, tensors.X_stdev, scale=args.sigma, edit_type=edit_mode, n_rows=n_comp)
             plt.savefig(outdir_summ / f'samp{img_idx}_real_{get_edit_name(edit_mode)}.jpg', dpi=300)
             show()
 
