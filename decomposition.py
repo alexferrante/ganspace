@@ -316,6 +316,7 @@ def compute(config, dump_name, instrumented_model):
     X_stdev_random = np.dot(random_dirs, X_view).std(axis=1)
 
     # Inflate back to proper shapes (for easier broadcasting)
+    Orig_comp = X_comp
     X_comp = X_comp.reshape(-1, *sample_shape)
     X_global_mean = X_global_mean.reshape(sample_shape)
     Z_comp = Z_comp.reshape(-1, *input_shape)
@@ -330,6 +331,7 @@ def compute(config, dump_name, instrumented_model):
 
     os.makedirs(dump_name.parent, exist_ok=True)
     np.savez_compressed(dump_name, **{
+        'og_pca_comp': Orig_comp.astype(np.float32),
         'act_comp': X_comp.astype(np.float32),
         'act_mean': X_global_mean.astype(np.float32),
         'act_stdev': X_stdev.astype(np.float32),
